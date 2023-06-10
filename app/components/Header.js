@@ -20,9 +20,9 @@ export default function Header() {
         </div>
         <div>
           <ul>
-            <li><Link href="/predictions/list">Prediction History</Link></li>
+            {/* <li><Link href="/predictions/list">Prediction History</Link></li> */}
             <li><Link href="/predictions/create">Upcoming Games (make predictions)</Link></li>
-            <li><Link href="/standings">Standings</Link></li>
+            {/* <li><Link href="/standings">Standings</Link></li> */}
             <li><Link href="/">Dashboard</Link></li>
           </ul>
         </div>
