@@ -1,9 +1,9 @@
-import prisma from "lib/prismaClient";
+import prisma from "@/lib/prismaClient";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt'
 
-export default NextAuth({
+export const options = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
@@ -43,4 +43,8 @@ export default NextAuth({
       return session
     }
   }
-})
+}
+
+const handler = NextAuth(options)
+
+export {handler as GET, handler as POST}
