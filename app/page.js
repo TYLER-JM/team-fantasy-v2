@@ -1,4 +1,5 @@
 import Dashboard from './components/Dashboard'
+import Header from './components/Header'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+        <Header/>
         <Dashboard/>
       </div>
     </main>

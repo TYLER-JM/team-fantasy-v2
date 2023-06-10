@@ -3,7 +3,7 @@ import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt'
 
-export const options = {
+export const Options = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
@@ -45,6 +45,6 @@ export const options = {
   }
 }
 
-const handler = NextAuth(options)
+const handler = NextAuth(Options)
 
 export {handler as GET, handler as POST}

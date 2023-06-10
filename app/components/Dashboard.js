@@ -9,7 +9,7 @@ export default function Dashboard() {
     return (
       <div>
         <h1>Welcome, {session.user.username}!</h1>
-        <p>this is your Dashboard page will all sorts of fun stuff to do.</p>
+        <p>this is your Dashboard page with all sorts of fun stuff to do.</p>
       </div>
     )
   }
