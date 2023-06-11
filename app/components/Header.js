@@ -11,7 +11,7 @@ export default function Header() {
     return (
       <nav >
         <div>
-          <button
+          <button className='border-solid border-2 border-indigo-600'
           >MENU</button>
           <div>
             <span>{session.user.username}</span>
