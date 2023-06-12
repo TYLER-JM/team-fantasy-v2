@@ -16,9 +16,7 @@ const StandingsPage = async () => {
   }
 
   return (
-    <main>
-      <div className="p-24">
-          you are on the standings page. Server Side rendered thing. You should not see this unless you are signed in
+      <div className="p-24 overflow-x-auto">
           <table className="min-w-full text-left text-sm font-light">
           <caption><h2 className="border-solid border-2 border-indigo-600">Fantasy League</h2></caption>
           <thead className="border-b font-medium dark:border-neutral-500">
@@ -49,7 +47,6 @@ const StandingsPage = async () => {
           </tbody>
         </table>
       </div>
-    </main>
   )
 }
 
