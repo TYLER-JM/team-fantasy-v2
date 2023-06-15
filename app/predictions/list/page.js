@@ -1,14 +1,17 @@
-'use client'
+import PredictionGorp from "./PredictionGorp"
+import { getServerSession } from "next-auth"
+import { Options } from "@/app/api/auth/[...nextauth]/route"
 
-import { useSession } from "next-auth/react"
 
 
-export default function PredictionsList() {
-  const {data: session} = useSession({required: true})
+const PredictionListPage = async () => {
+  const session = await getServerSession(Options)
 
   return (
-    <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-      Predictions List. This is the list of predictions you have made. You shouldn&apos;t be here without logging in
+    <div className="p-24 overflow-x-auto">
+      <PredictionGorp preds={[]} ownerId={session.user.owner.id}/>
     </div>
   )
 }
+
+export default PredictionListPage
