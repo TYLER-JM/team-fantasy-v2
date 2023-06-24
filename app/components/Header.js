@@ -19,7 +19,7 @@ export default function Header() {
           </div>
         </div>
         <div className='flex flex-col md:flex-row w-full sm:divide-x  justify-around'>
-          <span className='grow sm:text-center'><Link href="/predictions/list">Prediction History</Link></span>
+          <span className='grow sm:text-center'><Link href="/predictions/list/1">Prediction History</Link></span>
           <span className='grow sm:text-center'><Link href="/predictions/create">Upcoming Games (make predictions)</Link></span>
           <span className='grow sm:text-center'><Link href="/standings">Standings</Link></span>
           <span className='grow sm:text-center'><Link href="/">Dashboard</Link></span>
