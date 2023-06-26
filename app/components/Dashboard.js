@@ -2,8 +2,15 @@
 
 import { useSession, signIn } from "next-auth/react";
 
+
 export default function Dashboard() {
-  const {data: session } = useSession()
+  const {data: session, status } = useSession()
+
+  if (status === 'loading') {
+    return (
+      <h2>Loading...</h2>
+    )
+  }
 
   if (session) {
     return (
