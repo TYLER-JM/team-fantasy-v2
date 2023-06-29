@@ -17,7 +17,7 @@ export default function PredictionsCreate() {
     console.log('getting games for day:', day)
 
     async function fetchUpcoming() {
-      const res = await fetch(`/api/games?ownerId=${session.user.owner.id}&addDays=${day}`);
+      const res = await fetch(`/api/predictions?ownerId=${session.user.owner.id}&addDays=${day}`);
       const newGames = await res.json()
       if (!ignore) {
         setGames(g => ({...g, ...newGames}))

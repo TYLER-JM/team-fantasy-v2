@@ -9,3 +9,7 @@ export async function GET(request) {
   const res = await Owner.upcomingGames(ownerId, addDays)
   return NextResponse.json(res)
 }
+
+export async function POST(request) {
+  console.log("you've submitted a request to save predictions")
+}
