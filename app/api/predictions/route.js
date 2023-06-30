@@ -14,10 +14,21 @@ export async function POST(request) {
   const { searchParams } = new URL(request.url)
   let formData = await request.formData()
   const ownerId = parseInt(searchParams.get('ownerId'))
-  const savedCount = await Owner.createPredictions(ownerId, formData)
-  console.log('predictions SAVED:', savedCount)
 
   let dashboardUrl = new URL('/', request.url)
-  return NextResponse.redirect(dashboardUrl, 303)
+  let response = NextResponse.redirect(dashboardUrl, 303)
+
+  const savedCount = await Owner.createPredictions(ownerId, formData)
   
+  console.log('predictions SAVED:', savedCount)
+  let expires = new Date()
+  expires.setSeconds(expires.getSeconds() + 10)
+  response.cookies.delete('saved-predictions')
+  response.cookies.set({
+    name: 'saved-predictions',
+    value: savedCount.count,
+    expires
+  })
+
+  return response  
 }

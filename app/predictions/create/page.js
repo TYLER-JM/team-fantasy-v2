@@ -11,6 +11,7 @@ export default function PredictionsCreate() {
   const [day, setDay] = useState(0)
   const [games, setGames] = useState({})
 
+  // for development help
   function seeGames() {
     console.log('GAMES', games)
   }
