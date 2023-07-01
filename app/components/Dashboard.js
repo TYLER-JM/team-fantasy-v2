@@ -1,12 +1,9 @@
 'use client'
 
 import { useSession, signIn } from "next-auth/react";
-import { useState } from "react";
 
-
-export default function Dashboard({flashMessage}) {
+export default function Dashboard() {
   const {data: session, status } = useSession()
-  const [flash, setFlash] = useState(flashMessage)
 
   if (status === 'loading') {
     return (
@@ -17,9 +14,7 @@ export default function Dashboard({flashMessage}) {
   if (session) {
     return (
       <div>
-        <h1>Welcome, {session.user.username}!</h1>
-        {flash !== undefined && <p>saved predictions: {flash} <span onClick={() => setFlash(undefined)}>[X]</span></p> }
-        
+        <h1>Welcome, {session.user.username}!</h1>        
         <p>this is your Dashboard page with all sorts of fun stuff to do.</p>
       </div>
     )

@@ -23,10 +23,10 @@ export async function POST(request) {
   console.log('predictions SAVED:', savedCount)
   let expires = new Date()
   expires.setSeconds(expires.getSeconds() + 10)
-  response.cookies.delete('saved-predictions')
+  response.cookies.delete('flash-message')
   response.cookies.set({
-    name: 'saved-predictions',
-    value: savedCount.count,
+    name: 'flash-message',
+    value: `Predictions saved: ${savedCount.count}`,
     expires
   })
 
