@@ -9,19 +9,21 @@ export default function PredictionsCreate() {
   const {data: session, status} = useSession({required: true})
   const [day, setDay] = useState(0)
   const [games, setGames] = useState([])
-
-  // for development help
-  function seeGames() {
-    console.log('GAMES', games)
-  }
+  const [ownerId, setOwnerId] = useState(false)
 
   useEffect(() => {
-    console.log('getting games for day:', day)
 
-    async function fetchUpcoming() {
-      const res = await fetch(`/api/predictions?ownerId=${session.user.owner.id}&addDays=${day}`);
+    if (session && session.user.owner.id !== ownerId) {
+      setOwnerId(session.user.owner.id)
+    }
+
+  }, [session, ownerId])
+
+  useEffect(() => {
+
+    async function fetchUpcoming() {  
+      const res = await fetch(`/api/predictions?ownerId=${ownerId}&addDays=${day}`);
       const newGames = await res.json()
-
       const arrayOfNewGames = Object.entries(newGames).map(([,value]) => value)
 
       // const emptyDate = new Date()
@@ -36,15 +38,15 @@ export default function PredictionsCreate() {
       if (!ignore) {
         setGames(g => ([...g, ...arrayOfNewGames]))
       }
-
     }
 
-    session && fetchUpcoming()
+    ownerId && fetchUpcoming()
     let ignore = false
     return () => {
       ignore = true
     }
-  }, [session, day])
+
+  }, [ownerId, day])
 
   if (status === 'loading') {
     return (
@@ -91,8 +93,7 @@ export default function PredictionsCreate() {
       </div>
       <div  className="flex justify-around py-2">
         <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={() => setDay(day + 1)}>Load More</button>
-        {Object.entries(games).length > 0 &&<button form="createPredictions" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Save Predictions</button>}
-        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={seeGames}>See Games</button>
+        {games.length > 0 &&<button form="createPredictions" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Save Predictions</button>}
       </div>
     </main>
   )
