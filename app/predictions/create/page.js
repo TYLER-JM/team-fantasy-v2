@@ -66,7 +66,7 @@ export default function PredictionsCreate() {
             if (game.id === undefined) {
               return (<p className="text-center text-neutral-600 font-semibold border-b border-indigo-600" key={game.message.replaceAll(' ', '_')}>{game.message}</p>)
             } else {
-              return (<p className="flex flex-col py-2" key={game.id}>
+              return (<div className="flex flex-col py-2" key={game.id}>
               <label htmlFor={game.id}>
                 <div className="px-3 border-2 rounded border-indigo-600 ">
                   <span>{game.homeTeam}</span> @ <span>{game.awayTeam}</span>
@@ -86,7 +86,7 @@ export default function PredictionsCreate() {
                   <span>Game has already started</span>
               }
 
-            </p>)
+            </div>)
             }
           })}
         </form>

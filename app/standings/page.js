@@ -17,31 +17,31 @@ const StandingsPage = async () => {
 
   return (
       <div className="sm:p-24 overflow-x-auto">
-          <table className="min-w-full text-sm font-light">
+          <table className="min-w-full font-light">
           <caption><h2 className="border-solid border-2 border-indigo-600">Fantasy League</h2></caption>
-          <thead className="border-b font-medium dark:border-neutral-500">
+          <thead className="font-medium">
             <tr>
-              <th>Owner</th>
-              <th>Total</th>
-              <th>NHL Points</th>
-              <th>Fantasy Points</th>
-              <th>Betting %</th>
-              <th>Bets Won</th>
-              <th>Bets Lost</th>
-              <th>Total Bets</th>
+              <th className="text-left whitespace-nowrap px-1 border-x border-slate-500">Owner</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Total</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">NHL Points</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Fantasy Points</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Betting %</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Bets Won</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Bets Lost</th>
+              <th className="whitespace-nowrap px-1 border-x border-slate-500">Total Bets</th>
             </tr>
           </thead>
           <tbody>
             {standings && standings.map(row => (
-              <tr className="border-b dark:border-neutral-500" key={row.owner.name + row.predictions.percentage}>
-                <td className="whitespace-nowrap px-3 py-2">{row.owner.name}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.eventStats.totalNhlPoints + row.predictions.fantasyPoints}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.eventStats.totalNhlPoints}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.predictions.fantasyPoints}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.predictions.percentage}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.predictions.correct}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.predictions.incorrect}</td>
-                <td className="whitespace-nowrap px-3 py-2">{row.predictions.total}</td>
+              <tr key={row.owner.name + row.predictions.percentage}>
+                <td className="whitespace-nowrap pl-1 pr-3 py-2 border-x border-slate-500">{row.owner.name}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.eventStats.totalNhlPoints + row.predictions.fantasyPoints}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.eventStats.totalNhlPoints}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.predictions.fantasyPoints}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.predictions.percentage}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.predictions.correct}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.predictions.incorrect}</td>
+                <td className="text-center whitespace-nowrap px-1 py-2 border-x border-slate-500">{row.predictions.total}</td>
               </tr>
             ))}
           </tbody>
