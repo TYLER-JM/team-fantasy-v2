@@ -13,9 +13,9 @@ export default function Dashboard() {
 
   if (session) {
     return (
-      <div>
-        <h1>Welcome, {session.user.username}!</h1>        
-        <p>this is your Dashboard page with all sorts of fun stuff to do.</p>
+      <div className="rounded bg-white shadow-md">
+        <h1 className="pt-1 bg-teal-500 rounded-t">Welcome, <span className="uppercase">{session.user.username}</span>!</h1>        
+        <p className="p-1 text-left">This is your Dashboard page. There&apos;s not much here yet.</p>
       </div>
     )
   }
