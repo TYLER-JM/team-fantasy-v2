@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 
 export function GET() {
-  console.log('We triggered te CRON job')
+  console.error('We triggered te CRON job oh no')
   return NextResponse.json(
     {
       ok: true,
     },
     {
-      status: 200,
+      status: 404,
     },
   );
 }
