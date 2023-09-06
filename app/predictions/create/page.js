@@ -26,8 +26,9 @@ export default function PredictionsCreate() {
       const newGames = await res.json()
       const arrayOfNewGames = Object.entries(newGames).map(([,value]) => value)
 
-      // const emptyDate = new Date()
-      const emptyDate = new Date('2023-04-11') // for development
+      // const emptyDate = new Date('2023-04-11') // for development
+      
+      const emptyDate = new Date()
       emptyDate.setDate(emptyDate.getDate() + Number(day))
       let emptyDay = {message: `no games on: ${emptyDate.toDateString()}`}
 
