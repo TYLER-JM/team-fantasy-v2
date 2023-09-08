@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Hello!</h1>
-      <p>Please <button onClick={() => signIn()}>Sign In</button> to make predictions and view the standings</p>
+      <p>Please <button className="px-1 rounded text-stone-200 bg-violet-500 hover:bg-violet-600 active:bg-violet-700" onClick={() => signIn()}>Sign In</button> to make predictions and view the standings</p>
     </div>
   )
 }

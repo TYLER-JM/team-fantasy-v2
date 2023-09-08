@@ -19,20 +19,20 @@ export default function Header() {
 
   if (session) {
     return (
-      <nav className='relative flex flex-col w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start'>
-        <div className='flex w-full flex-wrap items-center justify-end px-3'>
+      <nav className='relative flex flex-col w-full items-center justify-between bg-white text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start'>
+        <div className='flex w-full flex-wrap items-center justify-end py-1'>
           <div className='px-3'>
             <span>{session.user.username}</span>
           </div>
           <div className='px-3'>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700" onClick={() => signOut()}>Sign Out</button>
           </div>
         </div>
-        <div className='flex flex-col md:flex-row w-full sm:divide-x  justify-around'>
-          <span className='grow sm:text-center'><Link href="/predictions/list/1">Prediction History</Link></span>
-          <span className='grow sm:text-center'><Link href="/predictions/create">Upcoming Games (make predictions)</Link></span>
-          <span className='grow sm:text-center'><Link href="/standings">Standings</Link></span>
-          <span className='grow sm:text-center'><Link href="/">Dashboard</Link></span>
+        <div className='flex flex-col md:flex-row w-full  justify-around'>
+          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/predictions/list/1">Prediction History</Link></span>
+          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/predictions/create">Upcoming Games (make predictions)</Link></span>
+          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/standings">Standings</Link></span>
+          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/">Dashboard</Link></span>
         </div>
       </nav>
     )
@@ -40,8 +40,8 @@ export default function Header() {
   return (
     <nav className='relative flex flex-col w-full items-center justify-between bg-white py-2 text-neutral-600 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 dark:text-neutral-200 md:flex-wrap md:justify-start'>
       <div className='flex w-full flex-wrap items-center justify-end px-3'>
-        <span>Not signed in</span>
-        <button onClick={() => signIn()}>Sign In</button>
+        <span className='px-1'>Not signed in</span>
+        <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700" onClick={() => signIn()}>Sign In</button>
       </div>
     </nav>
   )

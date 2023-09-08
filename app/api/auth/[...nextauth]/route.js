@@ -7,7 +7,7 @@ export const Options = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
-      name: 'Username & Password',
+      name: 'Credentials',
       credentials: {
         username: {label: 'Username', type: 'text', placeholder: 'username'},
         password: {label: 'Password', type: 'password'}
