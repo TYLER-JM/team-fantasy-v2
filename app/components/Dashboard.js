@@ -1,6 +1,7 @@
 'use client'
 
 import { useSession, signIn } from "next-auth/react";
+import Link from "next/link";
 
 export default function Dashboard() {
   const {data: session, status } = useSession()
@@ -15,7 +16,9 @@ export default function Dashboard() {
     return (
       <div className="rounded bg-white shadow-md">
         <h1 className="pt-1 bg-teal-500 rounded-t">Welcome, <span className="uppercase">{session.user.username}</span>!</h1>        
-        <p className="p-1 text-left">This is your Dashboard page. There&apos;s not much here yet.</p>
+        <p className="p-1 text-left">This is your Dashboard page:</p>
+        <p className="p-1 text-left">Check out which teams you picked from the <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700"><Link href="/roster">Roster</Link></button> page.</p>
+        <p className="p-1 text-left">View your teams&apos; <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700"><Link href="/roster">Upcoming Games</Link></button> and make predictions.</p>
       </div>
     )
   }
@@ -23,7 +26,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Hello!</h1>
-      <p>Please <button className="px-1 rounded text-stone-200 bg-violet-500 hover:bg-violet-600 active:bg-violet-700" onClick={() => signIn()}>Sign In</button> to make predictions and view the standings</p>
+      <p>Please <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700" onClick={() => signIn()}>Sign In</button> to make predictions and view the standings</p>
     </div>
   )
 }
