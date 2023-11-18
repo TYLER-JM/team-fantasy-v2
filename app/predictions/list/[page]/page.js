@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth"
 import { Options } from "@/app/api/auth/[...nextauth]/route"
 import Owner from "@/lib/Owner"
 import Link from "next/link"
+import PredictionRow from "@/app/components/PredictionRow"
 
 async function getPredictions(owner, page) {
   return await Owner.loadPredictions(owner, page)
@@ -27,12 +28,7 @@ const PredictionListPage = async ({ params }) => {
           <tbody>
 
           {predictions.map(row => (
-            <tr className="border-b dark:border-neutral-500" key={row.date + row.finalScore}>
-              <td className="whitespace-nowrap px-3 py-2">{row.date.toDateString()}</td>
-              <td className="whitespace-nowrap px-3 py-2">{row.prediction}</td>
-              <td className="whitespace-pre-line px-3 py-2">{row.finalScore}</td>
-              <td className="whitespace-nowrap px-3 py-2">{row.result}</td>
-            </tr>
+            <PredictionRow row={row} key={row.date + row.finalScore}/>
           ))}
           </tbody>
         </table>
