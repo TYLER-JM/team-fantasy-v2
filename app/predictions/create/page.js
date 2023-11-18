@@ -25,7 +25,7 @@ export default function PredictionsCreate() {
       const res = await fetch(`/api/predictions?ownerId=${ownerId}&addDays=${day}`);
       const newGames = await res.json()
       const arrayOfNewGames = Object.entries(newGames).map(([,value]) => value)
-
+      console.log(`Fetch for days: ${day}. AND number of games is ${arrayOfNewGames.length}`)
       // const emptyDate = new Date('2023-04-11') // for development
       
       const emptyDate = new Date()
