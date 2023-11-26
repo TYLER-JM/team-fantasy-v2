@@ -17,7 +17,7 @@ export default function Dashboard() {
       <div className="rounded bg-white shadow-md">
         <h1 className="pt-1 bg-teal-500 rounded-t">Welcome, <span className="uppercase">{session.user.username}</span>!</h1>        
         <p className="p-1 text-left">This is your Dashboard page:</p>
-        <p className="p-1 text-left">Check out which teams you picked from the <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700"><Link href="/roster">Roster</Link></button> page.</p>
+        <p className="p-1 text-left">Check out which teams everyone picked from the <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700"><Link href="/roster">Rosters</Link></button> page.</p>
         <p className="p-1 text-left">View your teams&apos; <button className="px-1 rounded text-stone-200 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-700"><Link href="/predictions/create">Upcoming Games</Link></button> and make predictions.</p>
       </div>
     )

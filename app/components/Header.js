@@ -32,7 +32,7 @@ export default function Header() {
           <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/predictions/list/1">Prediction History</Link></span>
           <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/predictions/create">Upcoming Games (make predictions)</Link></span>
           <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/standings">Standings</Link></span>
-          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/roster">Roster</Link></span>
+          <span className='pl-1 border-t-2 border-l-2 border-slate-200 grow sm:text-center'><Link href="/roster">Rosters</Link></span>
         </div>
       </nav>
     )
