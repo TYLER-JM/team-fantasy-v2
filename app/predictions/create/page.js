@@ -70,7 +70,7 @@ export default function PredictionsCreate() {
               return (<div className="flex flex-col py-2" key={game.id}>
               <label htmlFor={game.id}>
                 <div className="px-3 border-2 rounded border-indigo-600 ">
-                  <span>{game.homeTeam}</span> @ <span>{game.awayTeam}</span>
+                  <span>{game.awayTeam}</span> @ <span>{game.homeTeam}</span>
                 </div>
                 <div className="text-sm text-neutral-600">{new Date(game.date).toDateString()}</div>
               </label>
