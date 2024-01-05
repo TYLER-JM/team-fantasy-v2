@@ -1,7 +1,6 @@
 'use client'
 
 export default function Roster({roster}) {
-  console.log('ROSTER: ', roster)
   return (
     <div className="sm:p-24 overflow-x-auto">
       <table className="min-w-full font-light">
