@@ -13,7 +13,7 @@ const PredictionListPage = async ({ params }) => {
   const session = await getServerSession(Options)
   const predictions = await getPredictions(session.user.owner.id, parseInt(params.page) - 1)
   return (
-    <div className="sm:p-24 overflow-x-auto">
+    <div className="sm:p-8 lg:p-24 overflow-x-auto">
       <table className="min-w-full text-sm font-light">
           <caption><h2 className="border-solid border-2 border-indigo-600">Your Predictions (Page {params.page})</h2></caption>
           <thead className="border-b font-medium dark:border-neutral-500">

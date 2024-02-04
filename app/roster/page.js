@@ -48,7 +48,7 @@ const RosterPage = async () => {
 
   if (session) {
     return (
-      <div className="sm:p-16 overflow-x-auto container mx-auto px-4">
+      <div className="sm:p-4 lg:p-24 overflow-x-auto container mx-auto px-4">
         {owners.map(owner => {
           return (<button key={owner.id} className={`m-2 px-2 p-1 rounded border border-indigo-700 hover:text-stone-200 hover:bg-indigo-700 ${selectedOwner === owner.id ? 'text-stone-200 bg-indigo-600' : ''}`} onClick={() => setSelectedOwner(owner.id)}>{owner.name}</button>)
         })}

@@ -2,7 +2,7 @@
 
 export default function Roster({roster}) {
   return (
-    <div className="sm:p-24 overflow-x-auto">
+    <div className="sm:p-8 lg:p-24 overflow-x-auto">
       <table className="min-w-full font-light">
         <thead className="font-medium">
           <tr>

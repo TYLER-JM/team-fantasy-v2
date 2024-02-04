@@ -16,7 +16,7 @@ const StandingsPage = async () => {
   }
 
   return (
-      <div className="sm:p-24 overflow-x-auto">
+      <div className="sm:p-8 lg:p-24 overflow-x-auto">
           <table className="min-w-full font-light">
           <caption><h2 className="border-solid border-2 border-indigo-600">Fantasy League</h2></caption>
           <thead className="font-medium">
