@@ -11,8 +11,6 @@ const RosterPage = async () => {
   const [owners, setOwners] = useState([])
   const [ownerId, setOwnerId] = useState(false)
 
-  console.log('Session', session)
-
   useEffect(() => {
     if (session && session.user.owner.id !== ownerId) {
       setOwnerId(session.user.owner.id)
@@ -21,7 +19,6 @@ const RosterPage = async () => {
 
   useEffect(() => {
     if (ownerId) {
-      console.log('reupdating loggedin user')
       setSelectedOwner(ownerId)
     }
   }, [ownerId])
